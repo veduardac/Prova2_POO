@@ -1,0 +1,41 @@
+<h2>{{ modoEdicao ? 'Editar Aluno' : 'Novo Aluno' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="salvar()" class="form-aluno">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput type="text" formControlName="nome">
+    <mat-error *ngIf="form.get('nome')?.hasError('required')">
+      O nome é obrigatório.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Sexo</mat-label>
+    <mat-select formControlName="sexo">
+      <mat-option value="M">M</mat-option>
+      <mat-option value="F">F</mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('sexo')?.hasError('required')">
+      O sexo é obrigatório.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput type="date" formControlName="dt_nasc">
+    <mat-error *ngIf="form.get('dt_nasc')?.hasError('required')">
+      A data de nascimento é obrigatória.
+    </mat-error>
+  </mat-form-field>
+
+  <div class="botoes">
+    <button mat-raised-button color="primary" type="submit">
+      Salvar
+    </button>
+
+    <button mat-raised-button type="button" (click)="cancelar()">
+      Cancelar
+    </button>
+  </div>
+</form>

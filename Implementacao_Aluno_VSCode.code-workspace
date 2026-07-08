@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "Arquivos Backend - Aluno",
+      "path": "backend"
+    },
+    {
+      "name": "Arquivos Frontend - Aluno",
+      "path": "frontend"
+    }
+  ],
+  "settings": {
+    "files.encoding": "utf8",
+    "editor.formatOnSave": true
+  }
+}
